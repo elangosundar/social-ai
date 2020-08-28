@@ -1,0 +1,18 @@
+name: 'badge-it'
+description: 'Add badges to README.md automatically.'
+inputs:
+  GITHUB_TOKEN:
+    description: 'github personal token'
+    required: true
+  badges:
+    description: 'A string array of names of the badges to add'
+  badge-style: 
+    description: 'The prefered badge style'
+
+branding:
+  icon: "box"
+  color: "black"
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
