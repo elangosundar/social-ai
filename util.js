@@ -1,6 +1,6 @@
 'use strict';
 
-const _getSocialLinks = (socialData, {owner, repo}, style = '') => {
+const _getSocialLinks = (socialData, {owner, repo}) => {
 	const socialArray = socialData.split(',');
 	const socialList = [];
 

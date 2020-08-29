@@ -12,8 +12,7 @@ const util = require('./util');
 class GenerateSocialIcon {
 	constructor() {
 		this.token = core.getInput('GITHUB_TOKEN');
-		this.inputSocialIcon = core.getInput('social');
-		this.badgeStyle = core.getInput('badge-style');
+		this.inputSocialIcon = core.getInput('social-icons');
 
 		this.octokit = github.getOctokit(this.token);
 		this.repoInfo = github.context.repo;
@@ -26,7 +25,7 @@ class GenerateSocialIcon {
 		const htmlContent = this.mdParser.makeHtml(content);
 		const {window: {document}} = new JSDOM(htmlContent);
 
-		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo, this.badgeStyle);
+		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
 
 		const header = document.querySelector('h1:nth-child(1)');
 		const newHeader = `<h1>${header.textContent} ${socialIcon}</h1>`;
