@@ -9,10 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2          
-      - name: install
-        run: npm install
-      - name: Update README.md
+      - uses: actions/checkout@v2
+      - name: Install and Update README.md
 	run: |
-	    npm run build
-
+	  npm install
+	  npm run build
