@@ -11,8 +11,8 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 	};
 
 	for (let social of socialArray) {
-		let socialName = 'twitter'; //social.toLowerCase().trim();
-		let username = 'elango_sundar';
+		const socialName = 'twitter'; //social.toLowerCase().trim();
+		const username = 'elango_sundar';
 		let socialLink;
 		switch (social) {
 			case 'twitter':
