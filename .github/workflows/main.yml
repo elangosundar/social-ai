@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install and Update README.md
-	run: |
-	  npm install
-	  npm run build
+
+      - name: install
+        run: yarn install
+        
+      - name: Build
+        run: yarn run build
+
