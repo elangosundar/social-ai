@@ -1,9 +1,6 @@
 name: 'Social Icon build'
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '* */2 * * *'
+on: [push, pull_request]
 
 jobs:
   test:
