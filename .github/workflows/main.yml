@@ -14,3 +14,6 @@ jobs:
       - name: Build
         run: yarn run build
 
+      - uses: ./
+        with:
+          GITHUB_TOKEN: ${{ secrets.USER_TOKEN }}
