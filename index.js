@@ -28,7 +28,7 @@ class GenerateSocialIcon {
 		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
 
 		const header = document.querySelector('h1:nth-child(1)');
-		const newHeader = `<h1>${header.textContent} ${socialIcon}</h1>`;
+		const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
 
 		const updatedReadme = htmlContent.replace(header.outerHTML, newHeader);
 		const updatedReadmeMd = this.mdParser.makeMarkdown(updatedReadme, document);
