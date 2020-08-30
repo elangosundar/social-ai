@@ -4,7 +4,6 @@
 	"description": "Github action to automatically add your social icons to your README.md",
 	"main": "dist/index.js",
 	"scripts": {
-		"lint": "xo",
 		"build": "ncc build index.js -o dist --source-map",
 		"clear": "ncc cache clean"
 	},
@@ -35,7 +34,6 @@
 		"showdown": "1.9.1"
 	},
 	"devDependencies": {
-		"@vercel/ncc": "0.23.0",
-		"xo": "0.33.0"
+		"@vercel/ncc": "0.23.0"
 	}
 }

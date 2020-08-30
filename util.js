@@ -5,9 +5,8 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 	const socialList = [];
 
 	const getSocialLink = ( socialName, username ) => {
-		// const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
+		const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
 
-		const imgLink = `https://cldup.com/dTxpPi9lDf.thumb.png`;
 		return `<a href="${username}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 	};
 
