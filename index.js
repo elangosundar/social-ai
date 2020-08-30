@@ -26,7 +26,7 @@ class GenerateSocialIcon {
 
 		// If the readme header is in html then don't markdown it.
 		if (content.includes('<h1>')) {
-			const {window: {document}} = new JSDOM(htmlContent);
+			const {window: {document}} = new JSDOM(content);
 			const header = document.querySelector('h1:nth-child(1)');
 
 			const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
