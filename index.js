@@ -30,7 +30,7 @@ class GenerateSocialIcon {
 			const header = document.querySelector('h1:nth-child(1)');
 
 			const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
-			const updatedReadme = htmlContent.replace(header.outerHTML, newHeader);
+			const updatedReadme = content.replace(header.outerHTML, newHeader);
 
 			return updatedReadme;
 		} 
