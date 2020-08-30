@@ -22,18 +22,32 @@ class GenerateSocialIcon {
 	}
 
 	_addSocialIcon(content) {
+		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
+
+		// If the readme header is in html then don't markdown it.
+		if (content.includes('<h1>')) {
+			const {window: {document}} = new JSDOM(htmlContent);
+			const header = document.querySelector('h1:nth-child(1)');
+
+			const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
+			const updatedReadme = htmlContent.replace(header.outerHTML, newHeader);
+
+			return updatedReadme;
+		} 
+
+		// If header is in markdown then make it html
 		const htmlContent = this.mdParser.makeHtml(content);
 		const {window: {document}} = new JSDOM(htmlContent);
 
-		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
-
 		const header = document.querySelector('h1:nth-child(1)');
+		const headerMd = this.mdParser.makeMarkdown(header.outerHTML, document);;
+
 		const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
+		const newHeaderMd = this.mdParser.makeMarkdown(newHeader, document).replace(/,/gm, ' ');
 
-		const updatedReadme = htmlContent.replace(header.outerHTML, newHeader);
-		const updatedReadmeMd = this.mdParser.makeMarkdown(updatedReadme, document);
+		const updatedReadme = content.replace(headerMd, newHeaderMd);
 
-		return updatedReadmeMd;
+		return updatedReadme;
 	}
 
 	_getReadmeEndpoint() {

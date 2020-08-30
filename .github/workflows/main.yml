@@ -10,7 +10,10 @@ jobs:
 
       - name: install
         run: yarn install
-        
+      
+      - name: Clear the cache
+        run: yarn run clear
+
       - name: Build
         run: yarn run build
 
