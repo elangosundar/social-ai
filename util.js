@@ -11,26 +11,26 @@ console.log(socialData);
 	const socialList = [];
 	if (socialData) {
 		console.log(socialData);		
-		[...socialData].forEach((element, index) => {
+		[...socialData].forEach((social, index) => {
 			let socialLink;
-			console.log(element.socialName+'------'+element.userName);
-			const socialName = element.socialName.toLowerCase().trim();
-			const username = element.userName.toLowerCase().trim();
-			console.log(socialName+'------'+username);
-			switch (socialName) {
-				case 'twitter':
-					socialLink = getSocialLink(socialName, username);
-					socialList.push(socialLink);
-					break;
+			console.log(social);
+			// const socialName = element.socialName.toLowerCase().trim();
+			// const username = element.userName.toLowerCase().trim();
+			// console.log(socialName+'------'+username);
+			// switch (socialName) {
+			// 	case 'twitter':
+			// 		socialLink = getSocialLink(socialName, username);
+			// 		socialList.push(socialLink);
+			// 		break;
 
-				case 'facebook':
-					socialLink = getSocialLink(socialName, username);
-					socialList.push(socialLink);
-					break;
+			// 	case 'facebook':
+			// 		socialLink = getSocialLink(socialName, username);
+			// 		socialList.push(socialLink);
+			// 		break;
 
-				default:
-					break;
-			}
+			// 	default:
+			// 		break;
+			// }
 		});
 	}
 
