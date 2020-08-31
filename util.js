@@ -1,8 +1,6 @@
 'use strict';
 
 const _getSocialLinks = (socialData, {owner, repo}) => {
-	const socialArray = socialData.split(',');
-	const socialList = [];
 
 	const getSocialLink = ( socialName, username ) => {
 		const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
@@ -10,20 +8,27 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 		return `<a href="${username}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 	};
 
-	for (let social of socialArray) {
-		const socialName = 'twitter'; //social.toLowerCase().trim();
-		const username = 'elango_sundar';
+	const socialList = [];
+	socialData.forEach((element, index) => {
 		let socialLink;
-		switch (social) {
+		const socialName = element.socialName.toLowerCase().trim();
+		const username = element.userName.toLowerCase().trim();
+		
+		switch (socialName) {
 			case 'twitter':
 				socialLink = getSocialLink(socialName, username);
 			 	socialList.push(socialLink);
 				break;
 
+			case 'facebook':
+				socialLink = getSocialLink(socialName, username);
+				socialList.push(socialLink);
+				break;
+
 			default:
 				break;
 		}
-	}
+	});
 
 	return socialList.join(',').replace(/,/gm, ' ');
 };
