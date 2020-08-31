@@ -7,10 +7,11 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 
 		return `<a href="${username}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 	};
-
+console.log(socialData);
 	const socialList = [];
-	if (socialData) {	
-		socialData.forEach((element, index) => {
+	if (socialData) {
+		console.log(socialData);		
+		[...socialData].forEach((element, index) => {
 			let socialLink;
 			const socialName = element.socialName.toLowerCase().trim();
 			const username = element.userName.toLowerCase().trim();
