@@ -13,9 +13,10 @@ console.log(socialData);
 		console.log(socialData);		
 		[...socialData].forEach((element, index) => {
 			let socialLink;
+			console.log(element.socialName+'------'+element.userName);
 			const socialName = element.socialName.toLowerCase().trim();
 			const username = element.userName.toLowerCase().trim();
-			
+			console.log(socialName+'------'+username);
 			switch (socialName) {
 				case 'twitter':
 					socialLink = getSocialLink(socialName, username);
