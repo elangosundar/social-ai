@@ -10,40 +10,33 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 
 	const socialList = [];
 	if (socialData) {
-		console.log(socialData);
 		const socialArr = JSON.parse(socialData);
-		console.log(typeof socialArr);
 
 		socialArr.forEach(
 			(social) => {
-				console.log(social.socialName);
-				console.log(social.userName);
+				let socialLink;
+				const socialName = social.socialName.toLowerCase().trim();
+				const username = social.userName.toLowerCase().trim();
+
+				switch (socialName) {
+					case 'twitter':
+						socialLink = getSocialLink(socialName, username);
+						socialList.push(socialLink);
+						break;
+
+					case 'facebook':
+						socialLink = getSocialLink(socialName, username);
+						socialList.push(socialLink);
+						break;
+
+					default:
+						break;
+				}
 			}
 		);
 
-		/* socialArr.forEach((social, index) => {
-			let socialLink;
-			console.log(typeof social);
-			// const socialName = element.socialName.toLowerCase().trim();
-			// const username = element.userName.toLowerCase().trim();
-			// console.log(socialName+'------'+username);
-			// switch (socialName) {
-			// 	case 'twitter':
-			// 		socialLink = getSocialLink(socialName, username);
-			// 		socialList.push(socialLink);
-			// 		break;
-
-			// 	case 'facebook':
-			// 		socialLink = getSocialLink(socialName, username);
-			// 		socialList.push(socialLink);
-			// 		break;
-
-			// 	default:
-			// 		break;
-			// }
-		}); */
 	}
-
+console.log(socialList);
 	return socialList.join(',').replace(/,/gm, ' ');
 };
 
