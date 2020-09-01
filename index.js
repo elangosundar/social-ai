@@ -23,13 +23,14 @@ class GenerateSocialIcon {
 
 	_addSocialIcon(content) {
 		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
-
+console.log(socialIcon);
 		// If the readme header is in html then don't markdown it.
 		if (content.includes('<h1>')) {
 			const {window: {document}} = new JSDOM(content);
 			const header = document.querySelector('h1:nth-child(1)');
 
-			const newHeader = `<h1 align="center">${header.textContent}</h1><p align="center"> ${socialIcon}</p>`;
+			const newHeader = `<h1 align="center">${header.textContent}</h1>
+			<p align="center"> ${socialIcon}</p>`;
 			const updatedReadme = content.replace(header.outerHTML, newHeader);
 
 			return updatedReadme;

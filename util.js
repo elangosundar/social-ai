@@ -37,6 +37,7 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 
 	}
 console.log(socialList);
+console.log(socialList.join(',').replace(/,/gm, ' '));
 	return socialList.join(',').replace(/,/gm, ' ');
 };
 
