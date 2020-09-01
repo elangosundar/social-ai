@@ -7,15 +7,21 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 
 		return `<a href="${username}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 	};
-// console.log(socialData);
+
 	const socialList = [];
 	if (socialData) {
 		console.log(socialData);
-		console.log(typeof socialData);
-		const socialArr = [...socialData];
+		const socialArr = JSON.parse(socialData);
 		console.log(typeof socialArr);
-		console.log(socialArr);
-		socialArr.forEach((social, index) => {
+
+		socialArr.forEach(
+			(social) => {
+				console.log(social.socialName);
+				console.log(social.userName);
+			}
+		);
+
+		/* socialArr.forEach((social, index) => {
 			let socialLink;
 			console.log(typeof social);
 			// const socialName = element.socialName.toLowerCase().trim();
@@ -35,7 +41,7 @@ const _getSocialLinks = (socialData, {owner, repo}) => {
 			// 	default:
 			// 		break;
 			// }
-		});
+		}); */
 	}
 
 	return socialList.join(',').replace(/,/gm, ' ');
