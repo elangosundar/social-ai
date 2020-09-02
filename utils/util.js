@@ -3,15 +3,12 @@
 const social = require('./social');
 
 const _getSocialLinks = (socialData) => {
+	const socialInfo = iterateSocialInfo(socialData);
 
-	const getSocialLink = ( socialName, username ) => {
-		console.log(social.socialLinks);
-		const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
-		const socLink = socialLinks[socialName] ? socialLinks[socialName].userName : '';
-// console.log(socLink);
-		return `<a href="${socLink}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
-	};
+	return socialInfo.join(',').replace(/,/gm, ' ');
+};
 
+const iterateSocialInfo = (socialData) => {
 	const socialList = [];
 	if (socialData) {
 		const socialArr = JSON.parse(socialData);
@@ -46,10 +43,18 @@ const _getSocialLinks = (socialData) => {
 				}
 			}
 		);
-
 	}
 
-	return socialList.join(',').replace(/,/gm, ' ');
+	return socialList;
+}
+
+// Form the social link based actions input
+const getSocialLink = ( socialName, username ) => {
+	const socialLinks = social.socialLinks;
+	const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
+	const socLink = socialLinks[socialName] ? socialLinks[socialName].userName : '';
+
+	return `<a href="${socLink}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 };
 
 module.exports = {
