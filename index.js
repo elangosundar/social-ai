@@ -22,7 +22,7 @@ class GenerateSocialIcon {
 	}
 
 	_addSocialIcon(content) {
-		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
+		const socialIcon = util._getSocialLinks(this.inputSocialIcon);
 
 		// If the readme header is in html then don't markdown it.
 		if (content.includes('<h1')) {

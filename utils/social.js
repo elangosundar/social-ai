@@ -15,4 +15,6 @@ const socialLinks = {
     "youtube": "https://www.youtube.com/c/"
 };
 
-export { socialLinks };
+module.exports = {
+	socialLinks
+};

@@ -1,8 +1,8 @@
 'use strict';
 
-import { socialLinks } from './social';
+const socialLinks = require('./social');
 
-const _getSocialLinks = (socialData, {owner, repo}) => {
+const _getSocialLinks = (socialData) => {
 
 	const getSocialLink = ( socialName, username ) => {
 		const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
