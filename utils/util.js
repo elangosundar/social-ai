@@ -23,11 +23,19 @@ console.log(socLink);
 
 				switch (socialName) {
 					case 'twitter':
-						socialLink = getSocialLink(socialName, username);
-						socialList.push(socialLink);
-						break;
-
 					case 'facebook':
+					case 'github':
+					case 'dev-dot-to':
+					case 'codepen':
+					case 'codesandbox':
+					case 'stackoverflow':
+					case 'linkedin':
+					case 'kaggle':
+					case 'behance':
+					case 'medium':
+					case 'instagram':
+					case 'dribbble':
+					case 'youtube':
 						socialLink = getSocialLink(socialName, username);
 						socialList.push(socialLink);
 						break;

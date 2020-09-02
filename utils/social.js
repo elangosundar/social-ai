@@ -1,5 +1,5 @@
 const socialLinks = { 
-    "github" : "",
+    "github" : "https://github.com/",
     "twitter" : "https://twitter.com/",
     "dev-dot-to" : "https://dev.to/",
     "codepen" : "https://codepen.io/",
