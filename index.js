@@ -4,7 +4,7 @@ const showdown = require('showdown');
 const jsDom = require('jsdom');
 const {JSDOM} = jsDom;
 const {_encode, _decode} = require('node-encoder');
-const util = require('./util');
+const util = require('./utils/util');
 
 /**
  * Generates the social icons
@@ -23,9 +23,9 @@ class GenerateSocialIcon {
 
 	_addSocialIcon(content) {
 		const socialIcon = util._getSocialLinks(this.inputSocialIcon, this.repoInfo);
-console.log(socialIcon);
+
 		// If the readme header is in html then don't markdown it.
-		if (content.includes('<h1>')) {
+		if (content.includes('<h1')) {
 			const {window: {document}} = new JSDOM(content);
 			const header = document.querySelector('h1:nth-child(1)');
 
@@ -42,13 +42,10 @@ console.log(socialIcon);
 
 		const header = document.querySelector('h1:nth-child(1)');
 		const headerMd = this.mdParser.makeMarkdown(header.outerHTML, document);;
-console.log(headerMd);
 		const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
-console.log(newHeader);
 		const newHeaderMd = this.mdParser.makeMarkdown(newHeader, document).replace(/,/gm, ' ');
-console.log(newHeaderMd);
 		const updatedReadme = content.replace(header.outerHTML, newHeaderMd);
-console.log(updatedReadme);
+
 		return updatedReadme;
 	}
 
