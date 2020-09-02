@@ -39,10 +39,9 @@ console.log(socialIcon);
 		// If header is in markdown then make it html
 		const htmlContent = this.mdParser.makeHtml(content);
 		const {window: {document}} = new JSDOM(htmlContent);
-console.log(content);
+
 		const header = document.querySelector('h1:nth-child(1)');
 		const headerMd = this.mdParser.makeMarkdown(header.outerHTML, document);;
-console.log(header);
 console.log(headerMd);
 		const newHeader = `<h1>${header.textContent}</h1> ${socialIcon}`;
 console.log(newHeader);
@@ -50,7 +49,6 @@ console.log(newHeader);
 console.log(newHeaderMd);
 		const updatedReadme = content.replace(headerMd, newHeaderMd);
 console.log(updatedReadme);
-console.log(content);
 		return updatedReadme;
 	}
 
