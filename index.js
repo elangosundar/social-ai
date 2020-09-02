@@ -47,7 +47,7 @@ console.log(headerMd);
 console.log(newHeader);
 		const newHeaderMd = this.mdParser.makeMarkdown(newHeader, document).replace(/,/gm, ' ');
 console.log(newHeaderMd);
-		const updatedReadme = content.replace(headerMd, newHeaderMd);
+		const updatedReadme = content.replace(header.outerHTML, newHeaderMd);
 console.log(updatedReadme);
 		return updatedReadme;
 	}
