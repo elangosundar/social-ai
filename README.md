@@ -3,7 +3,7 @@
 `Social-AI` is a `Github action` automatically add your social icons or profiles in your `README.MD` file without hassle.
 It will helps without copy pasting the social icons from icons website and less configurations.
 
-# Demo
+# :rocket: Demo
 [SocialAIDemo](https://github.com/elangosundar/social-ai-test)
 
 # Usage 
@@ -45,3 +45,8 @@ It will helps without copy pasting the social icons from icons website and less 
 Contributions are welcomed! <3
 
 Made with :heart: and JavaScript.
+
+# Resource
+
+- [https://dev.to](Dev.to)
+- [https://simpleicons.org](SimpleIcons)
