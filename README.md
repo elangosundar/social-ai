@@ -3,6 +3,9 @@
 `Social-AI` is a `Github action` automatically add your social icons or profiles in your `README.MD` file without hassle.
 It will helps without copy pasting the social icons from icons website and less configurations.
 
+# Demo
+[SocialAIDemo](https://github.com/elangosundar/social-ai-test)
+
 # Usage 
 
  - `social-icons` - To add your social icons, you will pass `socialName` and your social `userName`. I have provide the example as below.
@@ -18,24 +21,24 @@ It will helps without copy pasting the social icons from icons website and less 
 # Inputs
 
 - `GITHUB_TOKEN` - A personal Github token.
-- `social-icons` - Add your social name and it is username to add to your README. [ Eg: If you will add social icon for twitter, will pass the `socialName` as `twitter` and `userName` as `YOUR_USERNAME`]
+- `social-icons` - Add your social name and it is username to add your README. [ Eg: If you will add social icon for twitter, will pass the `socialName` as `twitter` and `userName` as `YOUR_USERNAME`]
 
 # Available Social Icons
 
-github
-twitter
-dev-dot-to
-codepen
-codesandbox
-stackoverflow
-linkedin
-kaggle
-facebook
-instagram
-dribbble
-behance
-medium
-youtube
+- github
+- twitter
+- dev-dot-to
+- codepen
+- codesandbox
+- stackoverflow
+- linkedin
+- kaggle
+- facebook
+- instagram
+- dribbble
+- behance
+- medium
+- youtube
 
 # :heart: Support the project
 
