@@ -14,14 +14,13 @@ const iterateSocialInfo = (socialData) => {
 	const socialList = [];
 	if (socialData) {
 		const socialArr = JSON.parse(socialData);
-console.log(socialArr);
+
 		socialArr.forEach(
 			(social) => {
 				let socialLink;
 				const socialName = social.socialName.toLowerCase().trim();
 				const username = social.userName.toLowerCase().trim();
-console.log("first");
-console.log(username);
+
 				switch (socialName) {
 					case 'twitter':
 					case 'facebook':
@@ -53,12 +52,11 @@ console.log(username);
 
 // Form the social icon with link based actions input
 const getSocialLink = ( socialName, username ) => {
-console.log(username);
 	const socialLinks = social.socialLinks;
 	const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
 	const socLink = socialLinks[socialName] ? socialLinks[socialName] : '';
-	const finalSocLink = `${socLink}/${username}`;
-console.log(finalSocLink);
+	const finalSocLink = socialName == 'medium' ? `${socLink}/@${username}` : `${socLink}/${username}`;
+
 	return `<a href="${finalSocLink}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 };
 
