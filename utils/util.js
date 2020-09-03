@@ -54,7 +54,7 @@ const iterateSocialInfo = (socialData) => {
 const getSocialLink = ( socialName, username ) => {
 	const socialLinks = social.socialLinks;
 	const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
-	const socLink = socialLinks[socialName] ? socialLinks[socialName] : '';
+	const socLink = socialLinks[socialName] ? socialLinks[socialName].username : '';
 
 	return `<a href="${socLink}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 };
