@@ -2,16 +2,15 @@
 
 const social = require('./social');
 
+// Form the social links
 const _getSocialLinks = (socialData) => {
-	console.log("social link loops====>");
 	const socialInfo = iterateSocialInfo(socialData);
-	console.log(socialInfo);
 
 	return socialInfo.join(',').replace(/,/gm, ' ');
 };
 
+// Iterate the social links
 const iterateSocialInfo = (socialData) => {
-console.log("In Iterate loop====>");
 	const socialList = [];
 	if (socialData) {
 		const socialArr = JSON.parse(socialData);
@@ -47,17 +46,15 @@ console.log("In Iterate loop====>");
 			}
 		);
 	}
-	console.log("socialList loop====>");
-console.log(socialList);
+
 	return socialList;
 }
 
-// Form the social link based actions input
+// Form the social icon with link based actions input
 const getSocialLink = ( socialName, username ) => {
-	console.log("getSocialLink url loop====>");	
 	const socialLinks = social.socialLinks;
 	const imgLink = `https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/${socialName}.svg`;
-	const socLink = socialLinks[socialName] ? socialLinks[socialName].userName : '';
+	const socLink = socialLinks[socialName] ? socialLinks[socialName] : '';
 
 	return `<a href="${socLink}" target="_blank"><img align="center" src="${imgLink}" alt="${username}" height="20" width="20" /></a>`;
 };
