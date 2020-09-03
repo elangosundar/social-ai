@@ -1,6 +1,6 @@
 const socialLinks = { 
     "github" : "https://github.com/",
-    "twitter" : "https://twitter.com/",
+    "twitter" : "https://twitter.com",
     "dev-dot-to" : "https://dev.to/",
     "codepen" : "https://codepen.io/",
     "codesandbox" : "https://codesandbox.com/",
