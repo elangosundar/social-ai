@@ -1,4 +1,4 @@
-name: 'social-ai'
+name: 'social-ai-action'
 description: 'Add social icons to README.md automatically.'
 inputs:
   GITHUB_TOKEN:
